@@ -1,0 +1,6 @@
+ <h1>All the projects</h1>
+
+ <% @projects.each do |project| %>
+ 	<li>Priority :<%= project.priority %> - Title : <a href="/projects/<%= project.id %>"><%= project.title %></a> 
+ 	<%= "- #{project.description}" unless project.description.nil? %>	 	</li>
+ <% end %>
