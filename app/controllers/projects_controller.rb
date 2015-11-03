@@ -5,8 +5,17 @@ class ProjectsController < ApplicationController
 	def show
 		@id = params[:id]
 		@project = Project.find_by(id: @id)  #better than find cause if there is not it just returns nil
-		if @project.nil?
-			render "no_project_found"
-		end
+		render "no_project_found" if @project.nil?
+	end
+	def new
+		@project = Project.new
+	end
+	def create
+		Project.create({
+			title: params[:project][:title],
+			description: params[:project][:description],
+			priority: params[:project][:priority],
+			})
+		redirect_to "/projects"
 	end
 end

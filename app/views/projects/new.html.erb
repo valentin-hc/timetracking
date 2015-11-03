@@ -1,0 +1,18 @@
+<h1>Create a new project</h1>
+<%= form_for @project do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title, placeholder: "Title" %>
+	</div>
+	<div>
+		<%= f.label :priority %>
+		<%= f.number_field :priority %>
+	</div>
+	<div>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+	<div>
+		<%= f.submit "Create a project" %>
+	</div>
+<% end %>
