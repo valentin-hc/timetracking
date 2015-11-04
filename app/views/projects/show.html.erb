@@ -2,3 +2,7 @@
 <h1><%= @project.title %></h1>
 <p>Priority : <%= @project.priority %></p>
 <p>Description : <%= @project.description %></p>
+
+<%= link_to "Project entries", project_entries_path(@project) %>
+
+<%= link_to "Edit project", edit_project_path(@project) %>

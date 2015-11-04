@@ -1,6 +1,10 @@
  <h1>All the projects</h1>
-
  <% @projects.each do |project| %>
- 	<li>Priority :<%= project.priority %> - Title : <a href="/projects/<%= project.id %>"><%= project.title %></a> 
+ 	<li>Priority :<%= project.priority %> - <!--Title : <a href="<%= project_path(project) %>"><%= project.title %></a> -->
+ 	Title : <%= link_to project.title, project_path(project) %>
  	<%= "- #{project.description}" unless project.description.nil? %>	 	</li>
  <% end %>
+
+
+<!-- <a href="/projects/new">Create new project</a> -->
+<%= link_to "Create new project", new_project_path %>

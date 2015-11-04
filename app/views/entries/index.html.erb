@@ -1,9 +1,11 @@
 <h3><%= @project.title %></h3>
+<a href="<%= project_path(@project.id) %>">Project page</a>
 <h4>List of entries</h4>
 <%= @project.total_time %>
 <ul>
 	<% @entries.each do |entry| %>
-		<li> <%= " #{entry.hours} h, #{entry.minutes} min, Date : #{entry.date.strftime("%b %d, %Y")} - #{entry.comments}" %></li> 
+		<li> <%= " #{entry.hours} h, #{entry.minutes} min, Date : #{entry.date.strftime("%b %d, %Y")} - #{entry.comments}" %> <%= link_to "Edit entry", edit_entry_path(entry) %></li> 
 	<% end %>
 </ul>
-<a href="/projects/<%= @project.id %>/entries/new">Create new entry</a>
+
+<%= link_to "Create new", new_project_entry_path(@project) %>

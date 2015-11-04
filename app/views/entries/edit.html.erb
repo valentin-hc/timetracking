@@ -1,4 +1,4 @@
-<h2>Create new entry</h2>
+<h3>Edit entry</h3>
 <% if @entry.errors.any? %>
 	<ul>
 		<% @entry.errors.full_messages.each do |error_message| %>
@@ -7,10 +7,10 @@
 	</ul>
 <% end %>
 
-<%= form_for [@project, @entry] do |f| %> 
+<%= form_for @entry do |f| %> 
 	<%= f.number_field :hours, placeholder: "How many hours" %>
 	<%= f.number_field :minutes, placeholder: "How many minutes" %>
 	<%= f.date_field :date %>
 	<%= f.text_area :comments, placeholder: "Insert a comment" %>
-	<%= f.submit "Add my time" %>
+	<%= f.submit "Change my time" %>
 <% end %>

@@ -1,4 +1,4 @@
-<h1>Create a new project</h1>
+<h3>Edit Project</h3>
 <% if @project.errors.any? %>
 	<ul>
 		<% @project.errors.full_messages.each do |error_message| %>
@@ -6,6 +6,7 @@
 		<% end %>
 	</ul>
 <% end %>
+
 <%= form_for @project do |f| %>
 	<div>
 		<%= f.label :title %>
@@ -20,6 +21,6 @@
 		<%= f.text_area :description %>
 	</div>
 	<div>
-		<%= f.submit "Create a project" %>
+		<%= f.submit "Update my project" %>
 	</div>
 <% end %>
