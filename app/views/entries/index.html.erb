@@ -3,6 +3,7 @@
 <%= @project.total_time %>
 <ul>
 	<% @entries.each do |entry| %>
-		<li> <%= " #{entry.hours} h, #{entry.minutes} min, Date : #{entry.date.strftime("%A, %b %d")}" %></li> 
+		<li> <%= " #{entry.hours} h, #{entry.minutes} min, Date : #{entry.date.strftime("%b %d, %Y")} - #{entry.comments}" %></li> 
 	<% end %>
 </ul>
+<a href="/projects/<%= @project.id %>/entries/new">Create new entry</a>
