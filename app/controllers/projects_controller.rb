@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
 	def index
 		@projects = Project.all#where("title like 'Iron%'")
+		#@projects = Project.where(title: "bob")
+		render template: "shared/error" if @projects.empty?
 	end
 	def show
 		@id = params[:id]
 		@project = Project.find_by(id: @id)  #better than find cause if there is not it just returns nil
-		render "no_project_found" if @project.nil?
+		#render "no_project_found" if @project.nil?
+		render template: "shared/error" if @project.nil?		
 	end
 	def new
 		@project = Project.new

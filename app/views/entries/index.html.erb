@@ -1,0 +1,8 @@
+<h3><%= @project.title %></h3>
+<h4>List of entries</h4>
+<%= @project.total_time %>
+<ul>
+	<% @entries.each do |entry| %>
+		<li> <%= " #{entry.hours} h, #{entry.minutes} min, Date : #{entry.date.strftime("%A, %b %d")}" %></li> 
+	<% end %>
+</ul>
